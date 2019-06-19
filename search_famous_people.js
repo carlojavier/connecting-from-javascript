@@ -9,8 +9,9 @@ const knex = require('knex')
 
 const client = knex(config)
 
-name = process.argv.slice(2)[0];
+const name = process.argv[2];
 
+ 
 client('famous_people')
 .select().where('first_name', name)
 .asCallback(function(err, rows) {
